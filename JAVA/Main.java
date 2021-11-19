@@ -6,12 +6,21 @@ public class Main {
         Scanner in = new Scanner(System.in);
         int A = in.nextInt();
         int B = in.nextInt();
-        int C = in.nextInt();
 
-        System.out.println((A + B) % C);
-        System.out.println(((A % C) + (B % C)) % C);
-        System.out.println((A * B) % C);
-        System.out.println(((A % C) * (B % C)) % C);
+        int a, b, c;
+
+        a = A * (B % 10);
+        b = A * ((B % 100) / 10);
+        c = A * (B / 100);
+
+        System.out.println(a);
+        System.out.println(b);
+        System.out.println(c);
+        
+        b *= 10;
+        c *= 100;
+
+        System.out.println(a + b + c);
         
         in.close();
     }
